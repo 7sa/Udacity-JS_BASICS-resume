@@ -14,16 +14,35 @@ var bio = {
 	skills: ["delivery", "holophoning", "lacking Delta Brainwave"],
 	bioPic: "images/fry.jpg",
 
-	display: function() {
+	displayHeader: function() {
+		var formattedName = HTMLheaderName.replace("%data%", this.name);
+		var formattedRole = HTMLheaderRole.replace("%data%", this.role);
+		$("#header").prepend(formattedRole);
+		$("#header").prepend(formattedName);
+	},
+
+	displayContacts: function() {
 		var arr = [];
-		arr[0] = HTMLheaderName.replace("%data%", this.name);
-		arr[1] = HTMLheaderName.replace("%data%", this.role);
-		arr[2] = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
-		arr[3] = HTMLemail.replace("%data%", this.contacts.email);
-		arr[4] = HTMLtwitter.replace("%data%", this.contacts.twitter);
-		arr[5] = HTMLlocation.replace("%data%", this.contacts.location);
+		arr[0] = HTMLemail.replace("%data%", this.contacts.email);
+		arr[1] = HTMLtwitter.replace("%data%", this.contacts.twitter);
+		arr[2] = HTMLlocation.replace("%data%", this.contacts.location);
 		for (var i = 0; i < arr.length; ++i) {
-			$("#header").prepend(i);
+			$("#topContacts").append(arr[i]);
+			$("#footerContacts").append(arr[i]);
+		}
+	},
+
+	displayRest: function() {
+		var formattedPic = HTMLbioPic.replace("%data%", this.bioPic);
+		var formattedMsg = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
+		$("#header").append(formattedPic);
+		$("#header").append(formattedMsg);
+		if (this.skills !== undefined) {
+			$("#header").append(HTMLskillsStart);
+			for (var i = 0; i < bio.skills.length; ++i) {                           // append formatted skills
+				var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+				$("#skills").append(formattedSkill);
+			}
 		}
 	}
 };
@@ -178,17 +197,6 @@ var projects = {
 };
 
 
-if (bio.skills !== undefined) {                                             // append skills
-	$("#header").append(HTMLskillsStart);                                   // append skillsStart
-
-	for (var i = 0; i < bio.skills.length; ++i) {                           // append formatted skills
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-		$("#skills").append(formattedSkill);
-	}
-}
-
-
-
 
 $(document).click(function(loc) {    // console.logs click locations
 	var x = loc.pageX;
@@ -210,6 +218,8 @@ function inName(name) {
 
 $("#mapDiv").append(googleMap);
 
-bio.display();
+bio.displayHeader();
+bio.displayContacts();
+bio.displayRest();
 projects.display();
 work.display();
