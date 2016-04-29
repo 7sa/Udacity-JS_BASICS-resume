@@ -127,3 +127,15 @@ var projects = {
 		}
 	 ]
 };
+
+
+
+
+if (bio.skills !== undefined) {                                             // append skills
+	$("#header").append(HTMLskillsStart);                                   // append skillsStart
+
+	for (var i = 0; i < bio.skills.length; ++i) {                           // append formatted skills
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+		$("#skills").append(formattedSkill);
+	}
+}
