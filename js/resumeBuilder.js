@@ -166,3 +166,14 @@ $(document).click(function(loc) {    // console.logs click locations
 
 	logClicks(x,y);
 });
+
+
+
+$("#main").append(internationalizeButton);			//adds internationalize button to page
+
+function inName(name) {
+	name = name.trim().split(" ");
+	var first = name[0][0].toUpperCase() + first.slice(1).toLowerCase();
+	var last = name[1].toUpperCase();
+	return first + " " + last;
+}
