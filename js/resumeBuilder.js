@@ -125,9 +125,29 @@ var projects = {
 			description: "Taught myself to playthe holophoner",
 			images: ["http://vignette2.wikia.nocookie.net/en.futurama/images/5/5e/Holophonor.jpg/revision/latest?cb=20061012203400"]
 		}
-	 ]
+	 ],
+
+	 display: function() {
+	 	for (var proj in this.projects) {                                                // append work history
+			$("#projects").append(HTMLprojectStart);
+			var formattedTitle = HTMLprojectTitle.replace("%data%", this.projects[proj].title);
+			var formattedDates = HTMLprojectDates.replace("%data%", this.projects[proj].dates);
+			var formattedDescription = HTMLprojectDescription.replace("%data%", this.projects[proj].description);
+			if (this.projects[proj].images.length > 0) {
+				for (var image in this.projects[proj].images)
+					var formattedImage = HTMLprojectImage.replace("%data%", this.projects[proj].images[image]);
+			}
+			var appendArr = [formattedTitle, formattedDates, formattedDescription, formatedImage];
+
+			// append to project entry
+			for (var i = 0; i < appendArr.length; ++i) {
+				$(".project-entry:last").append(i);
+			}
+		}
+	 }
 };
 
+projects.display();
 
 
 
