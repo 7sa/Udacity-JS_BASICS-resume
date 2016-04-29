@@ -126,11 +126,11 @@ var work = {
 	display: function() {
 		for (var job in work.jobs) {                                                // append work history
 			$("#workExperience").append(HTMLworkStart);
-			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-			var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", this.jobs[job].employer);
+			var formattedTitle = HTMLworkTitle.replace("%data%", this.jobs[job].title);
+			var formattedDates = HTMLworkDates.replace("%data%", this.jobs[job].dates);
+			var formattedLocation = HTMLworkLocation.replace("%data%", this.jobs[job].location);
+			var formattedDescription = HTMLworkDescription.replace("%data%", this.jobs[job].description);
 			$(".work-entry:last").append(formattedEmployer + formattedTitle);
 			$(".work-entry:last").append(formattedDates + formattedLocation);
 			$(".work-entry:last").append(formattedDescription);
