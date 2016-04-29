@@ -12,7 +12,7 @@ var bio = {
 		location: "New New York"
 	},
 	skills: ["delivery", "holophoning", "lacking Delta Brainwave"],
-	bioPic: "../images/fry.jpg",
+	bioPic: "images/fry.jpg",
 
 	display: function() {
 		var arr = [];
@@ -144,12 +144,12 @@ var projects = {
 			"title": "Lucy Liu Robot",
 			"dates": "3003",
 			"description": "Used Nappster to create a Lucy Liubot",
-			"images": ["../images/liubot/char_54639.jpg", "../images/liubot/315_lucy_liu.jpg", "../images/liubot/Lucy-Liu.Futurama"]
+			"images": ["images/liubot/char_54639.jpg", "images/liubot/315_lucy_liu.jpg", "images/liubot/Lucy-Liu-Futurama.jpg"]
 		}, {
 			"title": "Holophoning",
 			"dates": "3003 - 3007",
 			"description": "Taught myself to playthe holophoner",
-			"images": ["../images/holophonor/Holophonor.jpg", "../images/holophonor/418nl-32.jpg", "../images/holophonor/hololeela.gif"]
+			"images": ["images/holophonor/Holophonor.jpg", ".iages/holophonor/418nl-32.jpg", "images/holophonor/hololeela.gif"]
 		}
 	 ],
 
