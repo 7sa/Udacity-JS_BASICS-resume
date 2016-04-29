@@ -16,8 +16,8 @@ var bio = {
 
 	display: function() {
 		var arr = [];
-		arr[0] = HTMLheaderName.replace("%data", this.name);
-		arr[1] = HTMLheaderName.replace("%data", this.role);
+		arr[0] = HTMLheaderName.replace("%data%", this.name);
+		arr[1] = HTMLheaderName.replace("%data%", this.role);
 		arr[2] = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
 		arr[3] = HTMLemail.replace("%data%", this.contacts.email);
 		arr[4] = HTMLtwitter.replace("%data%", this.contacts.twitter);
