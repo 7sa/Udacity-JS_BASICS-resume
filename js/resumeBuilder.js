@@ -140,6 +140,8 @@ if (bio.skills !== undefined) {                                             // a
 	}
 }
 
+
+
 function displayWork() {
 	for (var job in work.jobs) {                                                // append work history
 		$("#workExperience").append(HTMLworkStart);
@@ -155,3 +157,12 @@ function displayWork() {
 }
 
 displayWork();
+
+
+
+$(document).click(function(loc) {    // console.logs click locations
+	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x,y);
+});
