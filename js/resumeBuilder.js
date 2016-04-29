@@ -197,3 +197,5 @@ function inName(name) {
 	var last = name[1].toUpperCase();
 	return first + " " + last;
 }
+
+$("#mapDiv").append(googleMap);
