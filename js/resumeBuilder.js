@@ -159,15 +159,19 @@ var projects = {
 			var formattedTitle = HTMLprojectTitle.replace("%data%", this.projects[proj].title);
 			var formattedDates = HTMLprojectDates.replace("%data%", this.projects[proj].dates);
 			var formattedDescription = HTMLprojectDescription.replace("%data%", this.projects[proj].description);
-			if (this.projects[proj].images.length > 0) {
-				for (var image in this.projects[proj].images)
-					var formattedImage = HTMLprojectImage.replace("%data%", this.projects[proj].images[image]);
-			}
-			var appendArr = [formattedTitle, formattedDates, formattedDescription, formattedImage];
+
+			var appendArr = [formattedTitle, formattedDates, formattedDescription];
 
 			// append to project entry
 			for (var i = 0; i < appendArr.length; ++i) {
 				$(".project-entry:last").append(appendArr[i]);
+			}
+
+			// append project images
+			if (this.projects[proj].images.length > 0) {
+				for (var image in this.projects[proj].images)
+					var formattedImage = HTMLprojectImage.replace("%data%", this.projects[proj].images[image]);
+					$(".project-entry:last").append(formattedImage);
 			}
 		}
 	 }
