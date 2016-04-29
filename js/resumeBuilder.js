@@ -3,8 +3,7 @@ This is empty on purpose! Your code to build the resume will go here.
  */
 
 
-projects.display();
-work.display();
+
 
 var bio = {
 	name: "Philip J. Fry",
@@ -16,7 +15,7 @@ var bio = {
 		location: "New New York"
 	},
 	skills: ["delivery", "holophoning", "lacking Delta Brainwave"],
-	bioPic: "https://github.com/7sa/frontend-nanodegree-resume/blob/master/images/fry.jpg"
+	bioPic: "../images/fry.jpg"
 };
 
 
@@ -101,17 +100,17 @@ var education  = {
 var work = {
 	jobs: [
 		{
-			employer: "Planet Express",
-			location: "New New York",
-			title: "Delivery Boy",
-			dates: "3000 - 3007",
-			description: "Deliver packages for Planet Express LLC."
+			"employer": "Planet Express",
+			"location": "New New York",
+			"title": "Delivery Boy",
+			"dates": "3000 - 3007",
+			"description": "Deliver packages for Planet Express LLC."
 		}, {
-			employer: "Panucci's Pizza",
-			location: "New York",
-			title: "Delivery Boy",
-			dates: "1997 - 1999",
-			description: "Delivered pizzas for Mr. Panucci."
+			"employer": "Panucci's Pizza",
+			"location": "New York",
+			"title": "Delivery Boy",
+			"dates": "1997 - 1999",
+			"description": "Delivered pizzas for Mr. Panucci."
 		}
 	],
 	display: function() {
@@ -132,15 +131,15 @@ var work = {
 var projects = {
 	projects: [
 		{
-			title: "Lucy Liu Robot",
-			dates: 3003,
-			description: "Used Nappster to create a Lucy Liubot",
-			images: ["http://vignette2.wikia.nocookie.net/en.futurama/images/7/7d/LiuBot.jpg/revision/latest/scale-to-width-down/180?cb=20120404074657&format=webp"]
+			"title": "Lucy Liu Robot",
+			"dates": "3003",
+			"description": "Used Nappster to create a Lucy Liubot",
+			"images": ["../images/liubot/char_54639.jpg", "../images/liubot/315_lucy_liu.jpg", "../images/liubot/Lucy-Liu.Futurama"]
 		}, {
-			title: "Holophoning",
-			dates: "3003 - 3007",
-			description: "Taught myself to playthe holophoner",
-			images: ["http://vignette2.wikia.nocookie.net/en.futurama/images/5/5e/Holophonor.jpg/revision/latest?cb=20061012203400"]
+			"title": "Holophoning",
+			"dates": "3003 - 3007",
+			"description": "Taught myself to playthe holophoner",
+			"images": ["../images/holophonor/Holophonor.jpg", "../images/holophonor/418nl-32.jpg", "../images/holophonor/hololeela.gif"]
 		}
 	 ],
 
@@ -196,3 +195,6 @@ function inName(name) {
 }
 
 $("#mapDiv").append(googleMap);
+
+projects.display();
+work.display();
