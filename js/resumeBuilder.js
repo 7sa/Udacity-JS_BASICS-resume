@@ -101,13 +101,13 @@ var work = {
 			location: "New New York",
 			title: "Delivery Boy",
 			dates: "3000 - 3007",
-			description: "Deliver packages for Planet Express LLC"
+			description: "Deliver packages for Planet Express LLC."
 		}, {
 			employer: "Panucci's Pizza",
 			location: "New York",
 			title: "Delivery Boy",
 			dates: "1997 - 1999",
-			description: "Delivered pizzas for Mr. Panucci"
+			description: "Delivered pizzas for Mr. Panucci."
 		}
 	]
 };
@@ -138,4 +138,16 @@ if (bio.skills !== undefined) {                                             // a
 		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
 		$("#skills").append(formattedSkill);
 	}
+}
+
+for (var job in work.jobs) {                                                // append work history
+	$("#workExperience").append(HTMLworkStart);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	$(".work-entry:last").append(formattedEmployer + formattedTitle);
+	$(".work-entry:last").append(formattedDates + formattedLocation);
+	$(".work-entry:last").append(formattedDescription);
 }
