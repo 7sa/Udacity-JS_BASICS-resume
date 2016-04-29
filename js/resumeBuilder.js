@@ -2,9 +2,6 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
-
-
-
 var bio = {
 	name: "Philip J. Fry",
 	role: "Delivery Boy",
@@ -15,7 +12,20 @@ var bio = {
 		location: "New New York"
 	},
 	skills: ["delivery", "holophoning", "lacking Delta Brainwave"],
-	bioPic: "../images/fry.jpg"
+	bioPic: "../images/fry.jpg",
+
+	display: function() {
+		var arr = [];
+		arr[0] = HTMLheaderName.replace("%data", this.name);
+		arr[1] = HTMLheaderName.replace("%data", this.role);
+		arr[2] = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
+		arr[3] = HTMLemail.replace("%data%", this.contacts.email);
+		arr[4] = HTMLtwitter.replace("%data%", this.contacts.twitter);
+		arr[5] = HTMLlocation.replace("%data%", this.contacts.location);
+		for (var i = 0; i < arr.length; ++i) {
+			$("#header").prepend(i);
+		}
+	}
 };
 
 
@@ -153,7 +163,7 @@ var projects = {
 				for (var image in this.projects[proj].images)
 					var formattedImage = HTMLprojectImage.replace("%data%", this.projects[proj].images[image]);
 			}
-			var appendArr = [formattedTitle, formattedDates, formattedDescription, formatedImage];
+			var appendArr = [formattedTitle, formattedDates, formattedDescription, formattedImage];
 
 			// append to project entry
 			for (var i = 0; i < appendArr.length; ++i) {
@@ -196,5 +206,6 @@ function inName(name) {
 
 $("#mapDiv").append(googleMap);
 
+bio.display();
 projects.display();
 work.display();
