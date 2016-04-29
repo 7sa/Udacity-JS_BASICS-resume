@@ -167,7 +167,7 @@ var projects = {
 
 			// append to project entry
 			for (var i = 0; i < appendArr.length; ++i) {
-				$(".project-entry:last").append(i);
+				$(".project-entry:last").append(appendArr[i]);
 			}
 		}
 	 }
