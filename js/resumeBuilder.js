@@ -167,7 +167,7 @@ var projects = {
 		}, {
 			"title": "Holophoning",
 			"dates": "3003 - 3007",
-			"description": "Taught myself to playthe holophoner",
+			"description": "Taught myself to play the holophoner",
 			"images": ["images/holophonor/Holophonor.jpg", ".iages/holophonor/418nl-32.jpg", "images/holophonor/hololeela.gif"]
 		}
 	 ],
@@ -198,25 +198,34 @@ var projects = {
 
 
 
-$(document).click(function(loc) {    // console.logs click locations
-	var x = loc.pageX;
-	var y = loc.pageY;
 
+// RANDOM STUFF
+
+// console.logs click locations
+$(document).click(function(loc) {
+	var x = loc.pageX;
 	logClicks(x,y);
 });
 
 
-
-$("#main").append(internationalizeButton);			//adds internationalize button to page
-
+// adds internationalize button to page
+$("#main").append(internationalizeButton);
 function inName(name) {
 	name = name.trim().split(" ");
 	var first = name[0][0].toUpperCase() + first.slice(1).toLowerCase();
 	var last = name[1].toUpperCase();
+
 	return first + " " + last;
 }
 
+
+// adds map
 $("#mapDiv").append(googleMap);
+
+
+
+
+// CALLS DISPLAY FUNCTIONS
 
 bio.displayHeader();
 bio.displayContacts();
