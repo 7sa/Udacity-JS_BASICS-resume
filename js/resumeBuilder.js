@@ -234,12 +234,12 @@ $(document).click(function(loc) {
 
 // adds internationalize button to page
 $("#main").append(internationalizeButton);
-function inName(name) {
-	name = name.trim().split(" ");
-	var first = name[0][0].toUpperCase() + first.slice(1).toLowerCase();
-	var last = name[1].toUpperCase();
-
-	return first + " " + last;
+function inName() {
+	bio.name = bio.name.trim().split(" ");
+	var first = bio.name[0][0].toUpperCase() + first.slice(1).toLowerCase();
+	var last = bio.name[2].toUpperCase();
+	bio.name = first + " " + last;
+	return bio.name;
 }
 
 
