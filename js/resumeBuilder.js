@@ -192,7 +192,7 @@ var projects = {
 			"title": "Holophoning",
 			"dates": "3003 - 3007",
 			"description": "Taught myself to play the holophoner",
-			"images": ["images/holophonor/Holophonor.jpg", ".iages/holophonor/418nl-32.jpg", "images/holophonor/hololeela.gif"]
+			"images": ["images/holophonor/Holophonor.jpg", "images/holophonor/418nl-32.jpg", "images/holophonor/hololeela.gif"]
 		}
 	 ],
 
@@ -212,9 +212,10 @@ var projects = {
 
 			// append project images
 			if (this.projects[proj].images.length > 0) {
-				for (var image in this.projects[proj].images)
+				for (var image in this.projects[proj].images) {
 					var formattedImage = HTMLprojectImage.replace("%data%", this.projects[proj].images[image]);
 					$(".project-entry:last").append(formattedImage);
+				}
 			}
 		}
 	 }
