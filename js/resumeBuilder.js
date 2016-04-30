@@ -123,7 +123,31 @@ var education  = {
 			dates: "2015 -",
 			url: "https://www.codecademy.com/learn/ruby"
 		}
-	]
+	],
+
+	display: function() {
+		for (var school in education.schools) {                                                // append work history
+			$("#education").append(HTMLschoolStart);
+			var formattedSchool = HTMLschoolName.replace("%data%", this.schools[school].name);
+			var formattedDegree = HTMLschoolDegree.replace("%data%", this.schools[school].degree);
+			var formattedDates = HTMLschoolDates.replace("%data%", this.schools[school].dates);
+			var formattedLocation = HTMLschoolLocation.replace("%data%", this.schools[school].location);
+			var formattedMajor = HTMLschoolMajor.replace("%data%", this.schools[school].major);
+			$(".education-entry:last").append(formattedSchool + formattedDegree);
+			$(".education-entry:last").append(formattedDates + formattedLocation);
+			$(".education-entry:last").append(formattedMajor);
+		}
+		for (var webschool in education.onlineCourses) {                                                // append work history
+			$("#education").append(HTMLonlineClasses);
+			var formattedWebTitle = HTMLonlineTitle.replace("%data%", this.onlineCourses[webschool].title);
+			var formattedWebSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[webschool].school);
+			var formattedWebDates = HTMLonlineDates.replace("%data%", this.onlineCourses[webschool].dates);
+			var formattedWebURL = HTMLonlineURL.replace("%data%", this.onlineCourses[webschool].url);
+			$(".education-entry:last").append(formattedWebTitle + formattedWebSchool);
+			$(".education-entry:last").append(formattedWebDates);
+			$(".education-entry:last").append(formattedWebURL);
+		}
+	}
 };
 
 var work = {
@@ -230,5 +254,6 @@ $("#mapDiv").append(googleMap);
 bio.displayHeader();
 bio.displayContacts();
 bio.displayRest();
-projects.display();
 work.display();
+projects.display();
+education.display();
