@@ -8,7 +8,7 @@ var bio = {
 	welcomeMessage: "Oh, NOW I get it!",
 	contacts: {
 		email: "philipjfry@planetexpress.net",
-		twitter: "@fry",
+		twitter: "@frymeariver",
 		location: "New New York"
 	},
 	skills: ["delivery", "holophoning", "lacking Delta Brainwave"],
