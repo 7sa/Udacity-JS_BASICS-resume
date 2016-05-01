@@ -213,7 +213,7 @@ var projects = {
 			// append project images
 			if (this.projects[proj].images.length > 0) {
 				for (var image in this.projects[proj].images) {
-					var formattedImage = HTMLprojectImage.replace("%data%", this.projects[proj].images[image]);
+					var formattedImage = HTMLprojectImage.replace("%data%", this.projects[proj].images[image] + '"width = "200"');
 					$(".project-entry:last").append(formattedImage);
 				}
 			}

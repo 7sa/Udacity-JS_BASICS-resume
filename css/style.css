@@ -212,3 +212,7 @@ span {
     display: block;
   }
 }
+
+.images {
+    max-width: 200px;
+}
