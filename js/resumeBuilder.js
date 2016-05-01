@@ -126,7 +126,7 @@ var education  = {
 	],
 
 	display: function() {
-		for (var school in education.schools) {                                                // append work history
+		for (var school in education.schools) {
 			$("#education").append(HTMLschoolStart);
 			var formattedSchool = HTMLschoolName.replace("%data%", this.schools[school].name);
 			var formattedDegree = HTMLschoolDegree.replace("%data%", this.schools[school].degree);
@@ -137,8 +137,8 @@ var education  = {
 			$(".education-entry:last").append(formattedDates + formattedLocation);
 			$(".education-entry:last").append(formattedMajor);
 		}
-		for (var webschool in education.onlineCourses) {                                                // append work history
-			$("#education").append(HTMLonlineClasses);
+		$(".education-entry:last").append(HTMLonlineClasses);
+		for (var webschool in education.onlineCourses) {
 			var formattedWebTitle = HTMLonlineTitle.replace("%data%", this.onlineCourses[webschool].title);
 			var formattedWebSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[webschool].school);
 			var formattedWebDates = HTMLonlineDates.replace("%data%", this.onlineCourses[webschool].dates);
