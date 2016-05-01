@@ -198,6 +198,8 @@ span {
   display: block;
   height: 100%;
   margin: 0 5%;
+  font-weight: bold;
+  color: #ff9900;
 }
 
 #mapDiv {
